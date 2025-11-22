@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Repositories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My GitHub Repositories</h1>
+            <p class="subtitle">Exploring my projects</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search repositories...">
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading repositories...</p>
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <p>Failed to load repositories. Please try again later.</p>
+        </div>
+
+        <div class="stats" id="stats" style="display: none;">
+            <div class="stat-item">
+                <span class="stat-number" id="repoCount">0</span>
+                <span class="stat-label">Repositories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="starCount">0</span>
+                <span class="stat-label">Total Stars</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="forkCount">0</span>
+                <span class="stat-label">Total Forks</span>
+            </div>
+        </div>
+
+        <div class="repos-grid" id="reposContainer">
+            <!-- Repositories will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Powered by GitHub API | Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
