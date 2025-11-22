@@ -25,7 +25,7 @@ A clean, responsive GitHub Pages site that automatically lists all your reposito
    - Click "Save"
    - Your site will be available at `https://your-username.github.io/your-repo-name/`
 
-3. **Access your site**: Visit `https://jerem-martin.github.io/` (or your custom domain)
+3. **Access your site**: Visit `https://jerem-marti.github.io/` (or your custom domain)
 
 ## Customization
 
