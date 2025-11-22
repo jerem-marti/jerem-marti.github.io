@@ -106,11 +106,18 @@ function createRepoCard(repo) {
         day: 'numeric'
     });
 
+    // Determine the link: if repo has GitHub Pages, link to it; otherwise link to GitHub repo
+    const repoLink = repo.has_pages ? 
+        `https://${GITHUB_USERNAME}.github.io/${repo.name}/` : 
+        repo.html_url;
+    
+    const linkTarget = repo.has_pages ? '_self' : '_blank';
+
     return `
-        <div class="repo-card" onclick="window.open('${repo.html_url}', '_blank')">
+        <div class="repo-card" onclick="window.open('${repoLink}', '${linkTarget}')">
             <div class="repo-header">
-                <span class="repo-icon">📁</span>
-                <a href="${repo.html_url}" class="repo-name" target="_blank" onclick="event.stopPropagation()">
+                <span class="repo-icon">${repo.has_pages ? '🌐' : '📁'}</span>
+                <a href="${repoLink}" class="repo-name" target="${linkTarget}" onclick="event.stopPropagation()">
                     ${escapeHtml(repo.name)}
                 </a>
             </div>
@@ -120,6 +127,7 @@ function createRepoCard(repo) {
                 <span class="repo-stat">⭐ ${repo.stargazers_count}</span>
                 <span class="repo-stat">🍴 ${repo.forks_count}</span>
                 ${repo.open_issues_count > 0 ? `<span class="repo-stat">📋 ${repo.open_issues_count}</span>` : ''}
+                ${repo.has_pages ? '<span class="repo-stat">🌐 Pages</span>' : ''}
             </div>
             <div class="repo-updated">Updated on ${updatedDate}</div>
         </div>
