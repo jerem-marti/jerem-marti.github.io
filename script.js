@@ -1,5 +1,5 @@
 // Configuration - Update with your GitHub username
-const GITHUB_USERNAME = 'jerem-martin'; // Change this to your GitHub username
+const GITHUB_USERNAME = 'jerem-marti'; // Change this to your GitHub username
 
 // Language colors (matching GitHub's color scheme)
 const languageColors = {
